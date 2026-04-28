@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventor Path — Interactive Robotics Course</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>Inventor Path</h1>
+      <p>Programming, Robotics, AI & Engineering for Young Makers</p>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar card">
+        <h2>Course Progress</h2>
+        <div class="progress-row">
+          <span id="progressLabel">0%</span>
+          <progress id="courseProgress" value="0" max="100">0%</progress>
+        </div>
+        <p id="progressText">0 of 0 lessons complete</p>
+
+        <button id="resetProgress" class="btn danger">Reset progress</button>
+
+        <hr />
+        <h3>Modules</h3>
+        <nav id="moduleNav" class="module-nav" aria-label="Course modules"></nav>
+      </aside>
+
+      <section class="content">
+        <section class="card hero">
+          <h2>Welcome, Inventors 👋</h2>
+          <p>
+            Learn by building: Inputs → Brain → Outputs. Start simple, then create
+            real projects with Arduino and ESP32.
+          </p>
+        </section>
+
+        <section class="card" id="lessonListSection">
+          <div class="section-head">
+            <h2 id="moduleTitle">Module lessons</h2>
+            <p id="moduleMeta"></p>
+          </div>
+          <div id="lessonList" class="lesson-grid"></div>
+        </section>
+
+        <section class="card" id="lessonDetailSection" hidden>
+          <div class="section-head">
+            <h2 id="lessonTitle"></h2>
+            <div class="lesson-actions">
+              <button id="markComplete" class="btn">Mark complete</button>
+              <button id="backToList" class="btn secondary">Back to lessons</button>
+            </div>
+          </div>
+          <p id="lessonDuration" class="meta"></p>
+          <p id="lessonSummary"></p>
+
+          <h3>Learning goals</h3>
+          <ul id="lessonObjectives"></ul>
+
+          <h3>Hands-on steps</h3>
+          <ol id="lessonActivities"></ol>
+
+          <section id="quizSection" hidden>
+            <h3>Quick Check</h3>
+            <p id="quizQuestion"></p>
+            <div id="quizOptions" class="quiz-options"></div>
+            <p id="quizFeedback" class="feedback"></p>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <script src="data/course.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
